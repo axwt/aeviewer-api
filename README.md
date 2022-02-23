@@ -109,6 +109,30 @@ JS0N.parse(string);
 ### AEVIEWER
 
 ```javascript
+  /**
+   * Show alert with trial version
+   * Useful when you would like customers to try a trial version first
+   * @param header    - Alert's header
+   * @param content   - Alert's content
+   * @param img       - Path to local image or URL
+   * @param url       - URL to package
+   * @returns boolean, always true
+   */
+
+AEVIEWER.alertTrial(header, content, img, url);
+
+```
+<details>
+  <summary>Trial alert example</summary>
+
+<img src="images/exampleTrialAlert.png" width="35%">
+
+</details>
+
+
+
+
+```javascript
 
 /**
  * Imports or opens file inside the current project
@@ -130,6 +154,7 @@ JS0N.parse(string);
 
 
 AEVIEWER.importFile(filepath, importType);
+
 ```
 
 
