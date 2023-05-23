@@ -130,13 +130,59 @@ File extensions supported by PRO version:
 ```
 </details>
 
+#### Get an object with available system fonts
+
+
+```javascript
+/**
+ * Get available system fonts
+ * @returns {object} { fonts: [...], errors: [...] } with fonts and errors occured during parsing the fonts
+ */
+
+AEVIEWER.getSystemFonts();
+
+// returned data example below
+
+// {
+//     "fonts": [{
+//             "path": "/Library/Fonts/Arial Unicode.ttf",
+//             "familyName": "Arial Unicode MS",
+//             "style": "Regular",
+//             "postScriptName": "ArialUnicodeMS"
+//         },
+//         {
+//             "path": "/Library/Fonts/SF-Compact-Display-Bold.otf",
+//             "familyName": "SF Compact Display",
+//             "style": "Bold",
+//             "postScriptName": "SFCompactDisplay-Bold"
+//         },
+//         ...
+//     ],
+//     "errors": [{
+//             "message": "Only format 4 and 12 cmap tables are supported (found format 13).",
+//             "fontPath": "/System/Library/Fonts/LastResort.otf"
+//         },
+//         {
+//             "message": "Maximum call stack size exceeded",
+//             "fontPath": "/System/Library/Fonts/SFNS.ttf"
+//         },
+//         {
+//             "message": "Font doesn't contain TrueType or CFF outlines.",
+//             "fontPath": "/System/Library/Fonts/Supplemental/NISC18030.ttf"
+//         }
+//     ]
+// }
+
+
+```
+
 #### Invoke built-in color picker
 
 
 ```javascript
 /**
  * Create a dialog window with color picker
- * @returns RGB or -1 if user clicked "Cancel"
+ * @returns {array} RGB or -1 if user clicked "Cancel"
  */
 
 AEVIEWER.colorPicker();
@@ -148,7 +194,7 @@ AEVIEWER.colorPicker();
 /**
  * Execute command in the system terminal
  * @param cmd  - String with the command
- * @returns String with the answer from command line
+ * @returns {string} String with the answer from command line
  */
 
 AEVIEWER.systemCall(cmd);
